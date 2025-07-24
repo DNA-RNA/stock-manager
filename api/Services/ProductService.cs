@@ -23,6 +23,10 @@ public class ProductService
     {
         return _products.Any(p => p.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
     }
+    public bool IsPriceOrStockInvalid(Product product)
+    {
+      return product.Price < 0 || product.Stock < 0;
+    }
 
     public Product Add(Product newProduct)
     {
@@ -45,22 +49,14 @@ public class ProductService
         return true;
     }
 
-    public bool DeleteById(Guid id)
-    {
-        var existing = _products.FirstOrDefault(p => p.Id == id);
-        if (existing is null)
-            return false;
-
-        _products.Remove(existing);
-        return true;
-    }
+    
     public bool DeleteByName(string name)
     {
-        var existing = _products.FirstOrDefault(p => p.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
-        if (existing is null)
+        var productModel = _products.FirstOrDefault(p => p.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
+        if (productModel is null)
             return false;
 
-        _products.Remove(existing);
+        _products.Remove(productModel);
         return true;
     }
 }
