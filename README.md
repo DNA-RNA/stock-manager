@@ -50,22 +50,43 @@ Backend kısmı **ASP.NET Core Web API**, frontend kısmı ise **React (Vite)** 
 ## Ürün Şeması
 
 **Product:**
-
+```json
 {
-    id	string($uuid)
-    name	string nullable: true
-    price	number($double)
-    stock	integer($int32)
+    id:	   string($uuid)
+    name:	string nullable: true
+    price:	number($double)
+    stock:	integer($int32)
 }
-  
+```
+**Product Model**
+
+```csharp
+public class Product
+{
+    public Guid Id { get; set; } = Guid.NewGuid();
+    public string Name { get; set; } = string.Empty;
+    public decimal Price { get; set; }
+    public int Stock { get; set; }
+}
+```
+
 ## Kurallar
 
-- Ürün eklerken id i otomatik Guid ile ekleniyor.
-- Name kontrolü ProductService de IsProductNameExists ile kontrol ediliyor.Bu fonksiyon ProductController da çağırılıyor.
+- Ürün eklerken id i otomatik Guid ile ekleniyor. Id GetById ile alınıyor GetAll() fonksiyonuyla tüm ürünler listeleniyor.
+- Ürün eklenirken aynı isimde başka bir ürünün olup olmadığı ProductService de IsProductNameExists ile kontrol ediliyor.
+- Ürün eklenirken yine aynı şekilde IsPriceOrStockInvalid fonksiyonu ileprice ve stock o dan büyük mü kontrolünü sağlanıyor.
+- Ürün güncellenirken ürün ismi (Name) değiştirilmeden fiyat(price) ve stock(stok) değiştirlemeyecek.
+- Ürün silinirken ürün adına(name) göre silme işlemi yapılabilmeli. 
 
 ---
 
 ##  API Endpointleri
+
+### Tüm Endpointler
+
+<img width="1445" height="368" alt="Ekran Resmi 2025-07-24 21 22 21" src="https://github.com/user-attachments/assets/bbcdce5e-e308-4657-8dba-10f551089511" />
+
+---
 
 ### 🔹 `GET /api/products`
 
@@ -93,61 +114,56 @@ Tüm ürünleri listeler.
 ### 🔹 `POST /api/products`
 
 Ürün eklemek için
-Ürün adı aynı olamaz eklerken kontrolü yapıldı
-Burada ek olarak stock ve price  sıfırdan büyük olup olmama kontrolü yapıldı
+---
+<img width="1439" height="515" alt="Ekran Resmi 2025-07-24 21 12 20" src="https://github.com/user-attachments/assets/48910742-1f8f-4103-be34-f86d3ed77adf" />
+
 **Request Body:**
+
 ```json
 [
-  {
-  "id": "otomatik atanıyor",
-  "name": "Ürün 1",
-  "price": 100,
-  "stock": 50
-  }
+  "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "name": "elma",
+  "price": 12.3,
+  "stock": 400
 ]
 ```
+
 **Response:**
+
+<img width="1427" height="553" alt="Ekran Resmi 2025-07-24 21 14 03" src="https://github.com/user-attachments/assets/ba0a256f-4b0a-4580-a2bc-2ac59f9a33be" />
 ```json
 [
   {
-  "id": "e1393649-6c22-4c18-8d7a-eb3b0265516e",
-  "name": "Ürün 1",
-  "price": 100,
-  "stock": 50
-  }
+  "id": "3bac6d6a-a6f4-4b72-81dd-b0912396ce2f",
+  "name": "elma",
+  "price": 12.3,
+  "stock": 400
+}
 ]
 ```
 ### 🔹 `PUT /api/products/{id}`
 
 Ürün güncellemek için
-Ürün adı değiştirilemez !
-Burada ek olarak stock ve price sıfırdan büyük olup olmama kontrolü yapıldı
+---
+<img width="1409" height="448" alt="Ekran Resmi 2025-07-24 21 18 50" src="https://github.com/user-attachments/assets/8a34b101-7086-486b-9cfe-0093a60207f9" />
 
 **Request Body:**
 ```json
 
 [
   {
-  "name": "Ürün 1",
-  "price": 100,
-  "stock": 50
+  "id": "75d1de9a-bd49-4df4-b476-eeff590132d7"
+  "name": "armut",
+  "price": 25,
+  "stock": 500
   }
 ]
 ```
 
 **Response:**
 -- 200 "Ürün güncellendi!"
+<img width="1404" height="415" alt="Ekran Resmi 2025-07-24 21 19 28" src="https://github.com/user-attachments/assets/a9a00263-6292-4951-98e5-4815fac7f6a9" />
 
-```json
-[
-  {
-  "id": "e1393649-6c22-4c18-8d7a-eb3b0265516e",
-  "name": "Ürün 1",
-  "price": 770,
-  "stock": 10
-  }
-]
-```
 ----
 
 ### 🔹 `Delete /api/products/name/{names}`
@@ -155,7 +171,15 @@ Burada ek olarak stock ve price sıfırdan büyük olup olmama kontrolü yapıld
 Ürün silmek için
 Ürün adı üzerinden ürün siliniyor
 
+<img width="1404" height="170" alt="Ekran Resmi 2025-07-24 21 20 22" src="https://github.com/user-attachments/assets/c5adce63-8730-4b61-8b4d-94956779467b" />
 
 **Response:**
--- 200 "Ürün başarıyla silindi."
+- 200 "Ürün başarıyla silindi."
+
+<img width="1404" height="367" alt="Ekran Resmi 2025-07-24 21 20 54" src="https://github.com/user-attachments/assets/b8d16af4-d9c4-460a-83d5-872c08f6970c" />
+
+---
+
+## Frontend Kısmı 
+- React 
 
