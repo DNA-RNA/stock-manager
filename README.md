@@ -213,5 +213,7 @@ Tüm ürünleri listeler.
 
 ---
 
-[![Demo](https://imgur.com/a/0QFp5TB)]
+[![Watch the video]](https://youtu.be/uAWzFV4lTL0)
+
+### [Projenin demo videosu. YouTube'dan izleyebilirsiniz](https://youtu.be/uAWzFV4lTL0)
 
