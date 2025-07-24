@@ -17,11 +17,12 @@ Backend kısmı **ASP.NET Core Web API**, frontend kısmı ise **React (Vite)** 
 - react-toastify
 - react-modal
 
---
+---
+### Projenin demo videosu. 
 
-### [Projenin demo videosu. YouTube'dan izleyebilirsiniz](https://youtu.be/uAWzFV4lTL0)
+### [YouTube'dan izleyebilirsiniz](https://youtu.be/uAWzFV4lTL0)
 
---
+---
 ## Projeyi Çalıştırma
 
 ### Backend (API)
