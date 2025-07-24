@@ -200,7 +200,16 @@ Tüm ürünleri listeler.
 
 ---
 
+
+<img width="1418" height="640" alt="Ekran Resmi 2025-07-24 17 32 00" src="https://github.com/user-attachments/assets/b3d7aace-9f49-421a-8933-e8d93f2b0409" />
+
+
+
 <img width="1418" height="640" alt="Ekran Resmi 2025-07-24 17 33 06" src="https://github.com/user-attachments/assets/684a7c6c-89ac-4a90-a98a-31a72d82b841" />
 
-  
+
+<img width="940" height="418" alt="Ekran Resmi 2025-07-24 21 40 02" src="https://github.com/user-attachments/assets/97bbc89d-5474-441c-97b2-868a1d3c4281" />
+
+
+![Demo](https://imgur.com/a/0QFp5TB)
 
