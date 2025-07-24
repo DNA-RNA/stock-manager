@@ -89,7 +89,7 @@ Tüm ürünleri listeler.
 
 ]
 
-
+```
 ### 🔹 `POST /api/products`
 
 Ürün eklemek için
@@ -105,7 +105,7 @@ Burada ek olarak stock ve price  sıfırdan büyük olup olmama kontrolü yapıl
   "stock": 50
   }
 ]
-
+```
 **Response:**
 ```json
 [
@@ -116,7 +116,7 @@ Burada ek olarak stock ve price  sıfırdan büyük olup olmama kontrolü yapıl
   "stock": 50
   }
 ]
-
+```
 ### 🔹 `PUT /api/products/{id}`
 
 Ürün güncellemek için
@@ -133,7 +133,7 @@ Burada ek olarak stock ve price sıfırdan büyük olup olmama kontrolü yapıld
   "stock": 50
   }
 ]
-
+```
 
 **Response:**
 -- 200 "Ürün güncellendi!"
@@ -147,6 +147,7 @@ Burada ek olarak stock ve price sıfırdan büyük olup olmama kontrolü yapıld
   "stock": 10
   }
 ]
+```
 ----
 
 ### 🔹 `Delete /api/products/name/{names}`
