@@ -11,8 +11,38 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding: 1rem;
 }
-
+form{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; 
+}
+input{
+  flex:1;
+}
+.flex-gap{
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.red-button{
+  background: red;
+  color: white;
+  border: none;
+}
+.orange-button{
+  background: #FFBB00;
+  color: white;
+  border: none;
+ 
+}
+.green-button{
+  background: #06BC0B;
+  color: white;
+  border: none;
+  white-space: 'nowrap'; 
+}
 a {
   font-weight: 500;
   color: #646cff;

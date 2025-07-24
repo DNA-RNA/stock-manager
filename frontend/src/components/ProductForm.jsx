@@ -24,12 +24,42 @@ function ProductForm({ onProductAdded }) {
 
   return (
     <>
- <form onSubmit={handleSubmit}>
-      <input name="name" value={form.name} onChange={handleChange} placeholder="Ürün adı" required />
-      <input name="price" type="number" value={form.price} onChange={handleChange} placeholder="Fiyat" required />
-      <input name="stock" type="number" value={form.stock} onChange={handleChange} placeholder="Stok" required />
-      <button type="submit">Ekle</button>
-    </form>
+<form onSubmit={handleSubmit}>
+ 
+  <div className="flex-gap">
+    <input
+      name="name"
+      value={form.name}
+      onChange={handleChange}
+      placeholder="Ürün adı"
+      required
+      style={{ flex: 1 }}
+    />
+    <input
+      name="price"
+      type="number"
+      value={form.price}
+      onChange={handleChange}
+      placeholder="Fiyat"
+      required
+     
+    />
+
+    <input
+      name="stock"
+      type="number"
+      value={form.stock}
+      onChange={handleChange}
+      placeholder="Stok"
+      required
+      
+    />
+  </div>
+
+ <div><button type="submit" className='green-button'>Ekle</button> </div> 
+  
+</form>
+
     </>
    
   );
