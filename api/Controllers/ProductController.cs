@@ -50,6 +50,10 @@ public class ProductsController : ControllerBase
     [HttpPut("{id:guid}")]
     public IActionResult Update(Guid id, Product updated)
     {
+        if (_productService.IsPriceOrStockInvalid(updated))
+        {
+            return BadRequest("Fiyat ve stok negatif olamaz.");
+        }
         var success = _productService.Update(id, updated);
         if (!success)
             return BadRequest("Güncelleme başarısız. Ürün bulunamadı ya da isim değiştirilemez!");
@@ -57,7 +61,7 @@ public class ProductsController : ControllerBase
         return Ok("Ürün güncellendi!");
     }
 
-    [HttpDelete("{name}")]
+    [HttpDelete("name/{name}")]
     public IActionResult DeleteByName(string name)
     {
         var success = _productService.DeleteByName(name);

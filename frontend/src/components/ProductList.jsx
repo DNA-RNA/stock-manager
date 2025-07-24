@@ -77,7 +77,7 @@ function ProductList() {
               {p.name} - {p.price}₺ - {p.stock} adet
               <div className="flex-gap">
                 <button
-                  onClick={() => handleDelete(p.id)}
+                  onClick={() => handleDelete(p.name)}
                   className="red-button"
                 >
                   Sil
