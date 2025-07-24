@@ -9,9 +9,13 @@ Backend kısmı **ASP.NET Core Web API**, frontend kısmı ise **React (Vite)** 
 
 - .NET Core Web API
 - React (Vite)
-- Toastify (backend servis mesajları için)
 
 ---
+
+##  Kullanılan Paketler
+
+- react-toastify
+- react-modal
 
 ## Projeyi Çalıştırma
 
@@ -111,6 +115,8 @@ Tüm ürünleri listeler.
 ]
 
 ```
+---
+
 ### 🔹 `POST /api/products`
 
 Ürün eklemek için
@@ -131,6 +137,8 @@ Tüm ürünleri listeler.
 **Response:**
 
 <img width="1427" height="553" alt="Ekran Resmi 2025-07-24 21 14 03" src="https://github.com/user-attachments/assets/ba0a256f-4b0a-4580-a2bc-2ac59f9a33be" />
+
+
 ```json
 [
   {
@@ -141,6 +149,8 @@ Tüm ürünleri listeler.
 }
 ]
 ```
+---
+
 ### 🔹 `PUT /api/products/{id}`
 
 Ürün güncellemek için
@@ -181,5 +191,16 @@ Tüm ürünleri listeler.
 ---
 
 ## Frontend Kısmı 
-- React 
+
+- Frontend tarafında api ile bağlantıyı sağlamak için env dosyası oluşturuldu.
+- ProductService dosyasında axios ile api bağlantısı sağlayarak CRUD işlemleri için gerekli fonskiyon tanımları yapıldı.
+- ProductForm, ProductList adındaki iki farklı component oluşturuldu. Burada ürünle ilgili CRUD işlemlerinin form ile arayüze yansıtılması sağlandı.
+- Güncelleme için react-modal ile pop-up oluşturuldu.
+- react-toastify ile servisteki hata, bilgilendirme mesajları arayüze yansıtıldı.
+
+---
+
+<img width="1418" height="640" alt="Ekran Resmi 2025-07-24 17 33 06" src="https://github.com/user-attachments/assets/684a7c6c-89ac-4a90-a98a-31a72d82b841" />
+
+  
 
