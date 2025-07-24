@@ -200,6 +200,9 @@ Tüm ürünleri listeler.
 
 ---
 
+### [Projenin demo videosu. YouTube'dan izleyebilirsiniz](https://youtu.be/uAWzFV4lTL0)
+
+---
 
 <img width="1418" height="640" alt="Ekran Resmi 2025-07-24 17 32 00" src="https://github.com/user-attachments/assets/b3d7aace-9f49-421a-8933-e8d93f2b0409" />
 
@@ -213,7 +216,5 @@ Tüm ürünleri listeler.
 
 ---
 
-[![Watch the video]](https://youtu.be/uAWzFV4lTL0)
 
-### [Projenin demo videosu. YouTube'dan izleyebilirsiniz](https://youtu.be/uAWzFV4lTL0)
 
